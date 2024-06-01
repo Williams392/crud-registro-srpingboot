@@ -11,18 +11,14 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table(name = "chofer")
-public class Chofer {
+public class TipoServicio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idChofer;
+    private Integer idTipoServicio;
 
-    private String nombreChofer;
-    private String direccion;
-    private String numBrevete;
+    private String nombre; // lima - trujillo
+    private Double precio;
+    private String estado;
 
-    //@ManyToOne
-    //@JoinColumn(name = "idBus")
-    //private Bus bus;
 }

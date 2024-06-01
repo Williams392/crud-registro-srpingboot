@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 @RestController
-@RequestMapping("transporte-app")
+@RequestMapping("transporte-api")
 @CrossOrigin(value = "http://localhost:4200")
 public class ChoferControlador {
 
@@ -51,10 +51,10 @@ public class ChoferControlador {
         Chofer chofer = this.choferServicio.buscarChoferPorId(id);
         if (chofer == null)
             throw new RecursoNoEncontradoExcepcion("No se encontró el id " + id);
-        chofer.setChofer(choferRecibido.getChofer());
+        chofer.setNombreChofer(choferRecibido.getNombreChofer());
         chofer.setDireccion(choferRecibido.getDireccion());
         chofer.setNumBrevete(choferRecibido.getNumBrevete());
-        chofer.setBus(choferRecibido.getBus());
+        //chofer.setBus(choferRecibido.getBus());
         this.choferServicio.guardarChofer(chofer);
         return ResponseEntity.ok(chofer);
     }

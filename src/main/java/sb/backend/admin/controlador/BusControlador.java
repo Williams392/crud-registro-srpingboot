@@ -17,7 +17,7 @@ import java.util.Map;
 
 @RestController
 //http://localhost:8080/transporte-app
-@RequestMapping("transporte-app")
+@RequestMapping("transporte-api")
 @CrossOrigin(value = "http://localhost:4200")
 
 public class BusControlador {
@@ -57,6 +57,9 @@ public class BusControlador {
         bus.setNombreBus(busRecibido.getNombreBus());
         bus.setNroPlaca(busRecibido.getNroPlaca());
         bus.setCantidadAsientos(busRecibido.getCantidadAsientos());
+        bus.setAno_fabricacion(busRecibido.getAno_fabricacion());
+        //chofer.setBus(choferRecibido.getBus());
+        bus.setChofer(busRecibido.getChofer());
         this.busServicio.guardarBus(bus);
         return ResponseEntity.ok(bus);
     }

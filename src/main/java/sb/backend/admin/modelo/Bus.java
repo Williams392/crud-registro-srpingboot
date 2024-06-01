@@ -1,10 +1,7 @@
 // 1-bus:
 package sb.backend.admin.modelo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +16,16 @@ public class Bus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idBus;
+
     private String nombreBus;
+
+    @Column(name = "nroPlaca", nullable = false, unique = true, length = 50)
     private String nroPlaca;
+    
+    private String ano_fabricacion;
     private Integer cantidadAsientos;
+
+    @ManyToOne
+    @JoinColumn(name = "idChofer")
+    private Chofer chofer;
 }
