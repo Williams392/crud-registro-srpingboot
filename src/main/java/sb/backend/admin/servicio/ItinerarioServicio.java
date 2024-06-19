@@ -13,7 +13,6 @@ public class ItinerarioServicio implements IItinerarioServicio {
     @Autowired
     private ItinerarioRepositorio itinerarioRepositorio;
 
-
     @Override
     public List<Itinerario> listarItinerario() {
         return this.itinerarioRepositorio.findAll();

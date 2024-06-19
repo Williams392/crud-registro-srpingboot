@@ -1,6 +1,4 @@
-
 package sb.backend.admin.modelo;
-
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,7 +19,6 @@ public class Reserva {
 
     private String serie;
     private String comprobante;
-
     private String fechaReserva;
     private String tipoCompra;
 
@@ -31,6 +28,6 @@ public class Reserva {
 
     @ManyToOne
     @JoinColumn(name = "idItinerario")
-    private Bus idItinerario;
+    private Itinerario idItinerario;
 
 }

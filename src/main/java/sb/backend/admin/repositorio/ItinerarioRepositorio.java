@@ -5,7 +5,6 @@ import sb.backend.admin.modelo.Itinerario;
 
 import java.util.List;
 
-
 public interface ItinerarioRepositorio extends JpaRepository<Itinerario, Integer> {
 }
 

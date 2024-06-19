@@ -8,7 +8,6 @@ import lombok.ToString;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
-
 @Entity
 @Data
 @NoArgsConstructor
@@ -23,7 +22,7 @@ public class Itinerario {
     private String origen;
     private String destino;
     private String fecha_viaje;
-    private String asientos;
+    private Double asientos;
     private String horaSalida;
     private String horaRetorno;
 
@@ -36,10 +35,8 @@ public class Itinerario {
     @JoinColumn(name = "idBus")
     private Bus nombreBus;
 
-
     @ManyToOne
     @JoinColumn(name = "idChofer")
-    private Bus nombreChofer;
-
+    private Chofer nombreChofer;
 
 }

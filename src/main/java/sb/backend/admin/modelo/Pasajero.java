@@ -1,5 +1,6 @@
 package sb.backend.admin.modelo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,7 +16,8 @@ public class Pasajero {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String idPasajero;
+    private Integer idPasajero;
+
     private String nombres;
     private String apellidos;
     private String direccion;
@@ -24,7 +26,7 @@ public class Pasajero {
     private String email;
     private String fechaNacimiento;
     private String contrasena;
-    private String edad;
+    private Double edad;
     private String sexo;
 
     @ManyToOne
@@ -33,6 +35,7 @@ public class Pasajero {
 
     @ManyToOne
     @JoinColumn(name = "idReserva")
-    private Bus idReserva;
+    @JsonIgnore // evitar redundancia de json
+    private Reserva idReserva;
 
 }
